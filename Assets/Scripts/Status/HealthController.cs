@@ -19,11 +19,15 @@ public class HealthController : MonoBehaviour
     public Color MedColor;
     [ColorUsageAttribute(true, true)]
     public Color LowColor;
+    [HideInInspector]
+    public bool isDead=false;
+
     void Start()
     {
         Vector3 offsetTransform = new Vector3(0, healthBarYOffset, 0);
         hpBar = Instantiate(hpBarPrefab, transform.position + offsetTransform, transform.rotation);
         hpBar.transform.parent = transform;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -49,6 +53,8 @@ public class HealthController : MonoBehaviour
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        if(currentHealth<=0)
+            isDead = true;
 
         Slider hpFillSlider = GetComponentsInChildren<Slider>()[0];
         hpFillSlider.value = (float)(currentHealth / maxHealth);

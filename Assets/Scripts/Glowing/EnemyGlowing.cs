@@ -59,4 +59,8 @@ public class EnemyGlowing : Glowing
             renderer.material.SetColor("_EdgeColor", SelectedColor);
         }
     }
+
+    public void SetNormal(){
+        SetGlowing(1.0f);
+    }
 }
