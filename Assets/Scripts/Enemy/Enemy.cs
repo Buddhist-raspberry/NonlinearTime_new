@@ -30,6 +30,7 @@ public class Enemy : ChronosBehaviour
     [Header("Objects")]
     public GameObject bulletPrefab;         //子弹预制体
     public LayerMask playerLayer;
+
     public enum State
     {
         Idle,
@@ -56,6 +57,7 @@ public class Enemy : ChronosBehaviour
     Animator m_animator;
     NavMeshAgent m_navMeshAgent;
     GameObject invader = null;
+    private HealthController m_healthController;
     private NavMeshPath path;
     #endregion
 
@@ -69,9 +71,11 @@ public class Enemy : ChronosBehaviour
         m_collider = GetComponent<CapsuleCollider>();
         m_animator = GetComponent<Animator>();
         m_navMeshAgent = GetComponent<NavMeshAgent>();
+        m_healthController = GetComponent<HealthController>();
     }
     private void Update()
     {
+        checkDead();
         switch (state)
         {
             case State.Dead:
@@ -110,7 +114,8 @@ public class Enemy : ChronosBehaviour
 
                 break;
         }
-        DrawFieldOfView();
+        if(state != State.Dead)
+            DrawFieldOfView();
     }
     // Draw the area gizmos for easy manipulation
     private void OnDrawGizmos()
@@ -123,6 +128,24 @@ public class Enemy : ChronosBehaviour
 
 
     #region 辅助函数
+    void checkDead(){
+        if(m_healthController.isDead){
+            Invoke("Die",0.1f);
+        }
+    }
+    void Die()
+    {
+        state = State.Dead;
+        m_animator.enabled = false;
+        m_navMeshAgent.enabled = false;
+        m_collider.enabled =false;
+        time.enabled = false;
+        GetComponent<EnemyGlowing>().SetNormal();
+        GetComponent<EnemyGlowing>().enabled =false;
+        GetComponent<EnemyRagdoll>().Ragdoll();
+
+    }
+
     void DrawFieldOfView()          //画出视野，调试用
     {
         Vector3 forward_left = Quaternion.Euler(0, -45, 0) * transform.forward * viewRadius;
@@ -161,7 +184,8 @@ public class Enemy : ChronosBehaviour
         {
             return;
         }
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + m_collider.center, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + m_collider.center +
+             transform.forward, transform.rotation);
         bullet.transform.parent = null;
         fireCd = Time.time + fireInterval;
     }

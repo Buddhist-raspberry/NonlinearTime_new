@@ -14,6 +14,8 @@ public class Bullet : ChronosBehaviour
         {
             time.rigidbody.velocity = transform.forward * speed;
         }
+        Invoke("DestorySelf", destroyTime);
+
     }
 
     // Update is called once per frame
@@ -34,10 +36,6 @@ public class Bullet : ChronosBehaviour
         else if (collider.gameObject.tag == "Enemy")
         {
             collider.gameObject.GetComponent<HealthController>().ChangeHealth(-5);
-        }
-        else
-        {
-            Invoke("DestorySelf", destroyTime);
         }
     }
     void DestorySelf()
