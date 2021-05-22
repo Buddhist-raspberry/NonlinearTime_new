@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProperty : MonoBehaviour
+public class PlayerProperty : HealthController
 {
     public static PlayerProperty instance { get; protected set; }
     
     public int maxHP = 200;
     public int maxMP = 100;
+    public int maxAddMP = 100;
+    public int maxDesMP = 100;
     int currentHP;
     int currentMP;
-    int timeRecoverHP = 6;
-    int timeRecoverMP = 3;
-    float currentHPTime = 3.0f;
-    float currentMPTime = 5.0f;
+    int currentAddMP;
+    int currentDesMP;
+    // int timeRecoverHP = 6;
+    // int timeRecoverMP = 3;
+    // float currentHPTime = 3.0f;
+    // float currentMPTime = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +25,10 @@ public class PlayerProperty : MonoBehaviour
         instance = this;
         currentHP = maxHP;
         currentMP = maxMP;
-        InvokeRepeating("recoverHP",0,currentHPTime);
-        InvokeRepeating("recoverMP",0,currentMPTime);
+        currentAddMP = maxAddMP;
+        currentDesMP = maxDesMP;
+        // InvokeRepeating("recoverHP",0,currentHPTime);
+        // InvokeRepeating("recoverMP",0,currentMPTime);
     }
 
     // Update is called once per frame
@@ -44,15 +50,15 @@ public class PlayerProperty : MonoBehaviour
     }
     public int getPlayHP(){return currentHP;}
     public int getPlayMP(){return currentHP;}
-    public void recoverHP()
+    public void recoverHP(int value)
     {
-        currentHP += timeRecoverHP;
+        currentHP += value;
         currentHP = currentHP <=maxHP?currentHP:maxHP;
         Debug.Log("recover HP: "+currentHP);
     }
-    public void recoverMP()
+    public void recoverMP(int value)
     {
-        currentMP += timeRecoverMP;
+        currentMP += value;
         currentMP = currentMP <=maxMP?currentMP:maxMP;
         Debug.Log("recover MP: "+currentMP);
     }
@@ -68,16 +74,4 @@ public class PlayerProperty : MonoBehaviour
         currentMP = currentMP >= 0?currentMP:0;
         Debug.Log("reduce MP: "+currentMP);
     }
-    // public void recoverHP(int value)
-    // {
-    //     currentHP += value;
-    //     currentHP = currentHP <=maxHP?currentHP:maxHP;
-    //     Debug.Log("recover HP: "+currentHP);
-    // }
-    // public void recoverMP(int value)
-    // {
-    //     currentMP += value;
-    //     currentMP = currentMP <=maxMP?currentMP:maxMP;
-    //     Debug.Log("recover MP: "+currentMP);
-    // }
 }
