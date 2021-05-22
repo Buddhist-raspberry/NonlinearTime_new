@@ -13,11 +13,13 @@ public class GameLogic : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject gameRestartUI;
     public GameObject postprocessing;
+    public GameObject gamePauseUI;
 
     private Volume volume_gaming;
     private Volume volume_dead;
-    
-    void Awake() {
+
+    void Awake()
+    {
         volume_gaming = postprocessing.GetComponents<Volume>()[0];
         volume_dead = postprocessing.GetComponents<Volume>()[1];
     }
@@ -30,7 +32,14 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            gamePauseUI.SetActive(true);
+            //GlobalTimeController.instance.Pause();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            GamePause();
+        }
     }
     public void Die()
     {
@@ -69,5 +78,23 @@ public class GameLogic : MonoBehaviour
         isEnd = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void GamePause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void GameResume()
+    {
+        gamePauseUI.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void BacktoMainMenu()
+    {
+        gamePauseUI.SetActive(false);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu_Scene");
     }
 }
