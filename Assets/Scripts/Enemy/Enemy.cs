@@ -58,7 +58,6 @@ public class Enemy : ChronosBehaviour
     NavMeshAgent m_navMeshAgent;
     GameObject invader = null;
     private HealthController m_healthController;
-    private NavMeshPath path;
     #endregion
 
 
