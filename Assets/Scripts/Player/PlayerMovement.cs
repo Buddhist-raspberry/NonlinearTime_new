@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public bool CanPause { get; set; } = true;
 
     public bool Grounded => m_Grounded;
+    public bool isEnabled = false;
 
     CharacterController m_CharacterController;
   
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
+        if(!isEnabled ) return;
         bool wasGrounded = m_Grounded;
         bool loosedGrounding = false;
         

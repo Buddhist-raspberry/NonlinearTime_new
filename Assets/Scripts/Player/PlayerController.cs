@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public float charge;
     public bool canShoot = true;
+    public bool isEnabled = false;
     public bool action;
     private enum UseStatus{
         CONTROL,WEAPON,MAGIC
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isEnabled) return;
         //使用武器
         if (CheckStatus(UseStatus.WEAPON)&&Input.GetMouseButtonDown(0))
         {
