@@ -36,6 +36,7 @@ public class Bullet : ChronosBehaviour
         else if (collider.gameObject.tag == "Enemy")
         {
             collider.gameObject.GetComponent<HealthController>().ChangeHealth(-5);
+            Destroy(gameObject);
         }
     }
     void DestorySelf()
