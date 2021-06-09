@@ -125,8 +125,9 @@ public class PlayerController : MonoBehaviour
                 if (currentTimeScale < 0 && _factor > 0) currentTimeScale = 0;
 
                 t_chronosBehaviour._setSpeed(currentTimeScale);
-
-                PlayerProperty.instance.reduceAccMP(3);
+                if( _factor>0) PlayerProperty.instance.reduceAccMP(3);
+                else PlayerProperty.instance.reduceDecMP(3);
+                
 
             }
         }
