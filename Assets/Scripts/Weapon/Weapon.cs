@@ -72,7 +72,7 @@ public abstract class Weapon : ChronosBehaviour
         Vector3 throwDirection = Camera.main.transform.forward;
         s.AppendCallback(() => rb.velocity = throwDirection * throwPower);
         // 扔武器消耗体力MP
-        PlayerProperty.instance.reduceMP(useMP);
+        // PlayerProperty.instance.reduceMP(useMP);
     }
 
     public void Pickup()        //捡起武器

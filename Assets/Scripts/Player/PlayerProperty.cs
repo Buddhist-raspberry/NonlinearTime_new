@@ -7,26 +7,21 @@ public class PlayerProperty : HealthController
     public static PlayerProperty instance { get; protected set; }
     
     public int maxHP = 200;
-    public int maxMP = 100;
-    public int maxAddMP = 100;
-    public int maxDesMP = 100;
+    // public int maxMP = 100;
+    public int maxAccMP = 100;
+    public int maxDecMP = 100;
     int currentHP;
-    int currentMP;
-    int currentAddMP;
-    int currentDesMP;
-    // int timeRecoverHP = 6;
-    // int timeRecoverMP = 3;
-    // float currentHPTime = 3.0f;
-    // float currentMPTime = 5.0f;
-
+    // int currentMP;
+    int currentAccMP;
+    int currentDecMP;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         currentHP = maxHP;
-        currentMP = maxMP;
-        currentAddMP = maxAddMP;
-        currentDesMP = maxDesMP;
+        // currentMP = maxMP;
+        currentAccMP = maxAccMP;
+        currentDecMP = maxDecMP;
         // InvokeRepeating("recoverHP",0,currentHPTime);
         // InvokeRepeating("recoverMP",0,currentMPTime);
     }
@@ -50,28 +45,48 @@ public class PlayerProperty : HealthController
     }
     public int getPlayHP(){return currentHP;}
     public int getPlayMP(){return currentHP;}
+    // 回血
     public void recoverHP(int value)
     {
         currentHP += value;
         currentHP = currentHP <=maxHP?currentHP:maxHP;
         Debug.Log("recover HP: "+currentHP);
     }
-    public void recoverMP(int value)
+    // public void recoverMP(int value)
+    // {
+    //     currentMP += value;
+    //     currentMP = currentMP <=maxMP?currentMP:maxMP;
+    //     Debug.Log("recover MP: "+currentMP);
+    // }
+    public void recoverAccMP(int value)
     {
-        currentMP += value;
-        currentMP = currentMP <=maxMP?currentMP:maxMP;
-        Debug.Log("recover MP: "+currentMP);
+        currentAccMP += value;
+        currentAccMP = currentAccMP <=maxAccMP?currentAccMP:maxAccMP;
+        Debug.Log("recover Acc MP: "+currentAccMP);
     }
+    public void recoverDecMP(int value)
+    {
+        currentDecMP += value;
+        currentDecMP = currentDecMP <=maxDecMP?currentDecMP:maxDecMP;
+        Debug.Log("recover Dec MP: "+currentDecMP);
+    }
+    // 掉血
     public void reduceHP(int value)
     {
         currentHP -= value;
         currentHP = currentHP >= 0?currentHP:0;
         Debug.Log("reduce HP: "+currentHP);
     }
-    public void reduceMP(int value)
+    public void reduceAccMP(int value)
     {
-        currentMP -= value;
-        currentMP = currentMP >= 0?currentMP:0;
-        Debug.Log("reduce MP: "+currentMP);
+        currentAccMP -= value;
+        currentAccMP = currentAccMP >= 0?currentAccMP:0;
+        Debug.Log("reduce Acc MP: "+currentAccMP);
+    }
+    public void reduceDecMP(int value)
+    {
+        currentDecMP -= value;
+        currentDecMP = currentDecMP >= 0?currentDecMP:0;
+        Debug.Log("reduce Dec MP: "+currentDecMP);
     }
 }

@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public Weapon weapon;
     public Transform weaponHolder;
     public LayerMask weaponLayer;
+    public LayerMask capsulaLayer;
     public LayerMask glowLayer;
     private Transform _selection;
 
@@ -124,8 +125,9 @@ public class PlayerController : MonoBehaviour
                 if (currentTimeScale < 0 && _factor > 0) currentTimeScale = 0;
 
                 t_chronosBehaviour._setSpeed(currentTimeScale);
-
-                PlayerProperty.instance.reduceMP(3);
+                if( _factor>0) PlayerProperty.instance.reduceAccMP(3);
+                else PlayerProperty.instance.reduceDecMP(3);
+                
 
             }
         }
@@ -144,7 +146,14 @@ public class PlayerController : MonoBehaviour
                 ChangeUseStatus(UseStatus.WEAPON);
             }
         }
-
+        // 捡起药丸
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit,5, capsulaLayer))
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                hit.transform.GetComponent<Capsula>().Pickup();
+            }
+        }
         //武器加速
         if(CheckStatus(UseStatus.CONTROL)&&Input.GetKeyDown(KeyCode.J) && weapon != null)
         {
