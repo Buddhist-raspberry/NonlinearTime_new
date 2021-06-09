@@ -51,7 +51,7 @@ public abstract class Weapon : ChronosBehaviour
             return;
 
         rb.isKinematic = (playerController.weapon == this) ? true : false;
-        m_rb.useGravity = (playerController.weapon == this) ? false : true;
+        rb.useGravity = (playerController.weapon == this) ? false : true;
         m_collider.isTrigger = (playerController.weapon == this);
     }
 
@@ -145,7 +145,7 @@ public abstract class Weapon : ChronosBehaviour
             //击中敌人计算伤害
             int damage = Mathf.FloorToInt(velocity * damagePerVelocity);
             Debug.Log("Cause Damage: " + damage);
-            hitObject.GetComponent<EnemyProperty>().reduceHP(damage);
+            hitObject.GetComponent<HealthController>().ChangeHealth(-damage);
 
             return;
         }
