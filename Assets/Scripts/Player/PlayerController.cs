@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
                 t_chronosBehaviour._setSpeed(currentTimeScale);
 
-                PlayerProperty.instance.reduceMP(3);
+                PlayerProperty.instance.reduceAccMP(3);
 
             }
         }

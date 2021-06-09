@@ -7,22 +7,19 @@ using Chronos;
 
 [RequireComponent(typeof(Rigidbody))]
 [SelectionBase]
-public abstract class Capsula : ChronosBehaviour
+public class Capsula : ChronosBehaviour
 {
     public bool active = true;
-    public int recoverValue = 0;
+    public int recoverValue = 30;
 
     protected RigidbodyTimeline3D rb;
     protected Rigidbody m_rb;
     protected Collider m_collider;
     protected Renderer m_renderer;
     protected PlayerController playerController;
-
-    public enum CapsulaType      //药丸类型
-    {
-        RED
-    };
-    public CapsulaType capsulaType { get; protected set; }
+     //药丸类型
+    public enum CapsulaType { HP,AccMP,DecMP };
+    public CapsulaType type;
     [Space]
     [Header("Capsula Settings")]
     public float reloadTime = .3f;
@@ -35,27 +32,30 @@ public abstract class Capsula : ChronosBehaviour
         m_renderer = GetComponent<Renderer>();
         playerController = PlayerController.instance;
 
-        Init();
     }
-    protected abstract void Init();
-    public void setRecoverValue(int value) {
-        this.recoverValue = value;
-        Debug.Log("Capsula Value: " + this.recoverValue);
-    }
+    // public void setRecoverValue(int value) {    
+    //     this.recoverValue = value;
+    //     Debug.Log("Capsula Value: " + this.recoverValue);
+    // }
     public void Pickup()        //捡起武器
     {
-        // if (!active)
-        //     return;
         Debug.Log("Pick Up Capsula!!!!!");
-        PlayerProperty.instance.recoverHP(recoverValue);
-        
-        GameObject.Destroy(gameObject,2.0f);
-        // playerController.weapon = this;
-        // ChangeSettings();
-
-        // transform.parent = playerController.weaponHolder;
-
-        // transform.DOLocalMove(Vector3.zero, .25f).SetEase(Ease.OutBack).SetUpdate(true);
-        // transform.DOLocalRotate(Vector3.zero, .25f).SetUpdate(true);
+        Debug.Log(type);
+        switch (type)
+        {
+            case CapsulaType.HP:
+                PlayerProperty.instance.recoverHP(recoverValue);
+                break;
+            case CapsulaType.AccMP:
+                PlayerProperty.instance.recoverAccMP(recoverValue);
+                break;
+            case CapsulaType.DecMP:
+                PlayerProperty.instance.recoverDecMP(recoverValue);
+                break;
+            default:
+                Debug.Log("无效");
+                break;
+            }
+        GameObject.Destroy(gameObject,0.0f);
     }
 }
