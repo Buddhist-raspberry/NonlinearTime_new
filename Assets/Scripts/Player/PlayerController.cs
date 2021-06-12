@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool canShoot = true;
     public bool isEnabled = false;
     public bool action;
-    private enum UseStatus{
+    public enum UseStatus{
         CONTROL,WEAPON,MAGIC
     };
     private UseStatus currentUseStatus = UseStatus.WEAPON;
@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ChangeUseStatus(UseStatus status)
+    public void ChangeUseStatus(UseStatus status)
     {
         
         if (status == UseStatus.CONTROL)
