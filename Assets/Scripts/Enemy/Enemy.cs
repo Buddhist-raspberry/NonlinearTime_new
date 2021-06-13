@@ -39,6 +39,7 @@ public class Enemy : ChronosBehaviour
         Dead,
     }
     [Header("State")]
+    public bool isEnabled = true;
     public State state = State.Idle;
     [Header("Time Control")]
     public float speedDownTimeScale = 0.3f;     //减速程度
@@ -74,6 +75,7 @@ public class Enemy : ChronosBehaviour
     }
     private void Update()
     {
+        if(!isEnabled) return;
         checkDead();
         switch (state)
         {
@@ -217,6 +219,9 @@ public class Enemy : ChronosBehaviour
         Debug.Log("SpeedDown For A While!");
         Invoke("RevocerTimeScale", speedDownTime);
 
+    }
+    public void SetEnabled(bool _isEnabled){
+        isEnabled = _isEnabled;
     }
     #endregion
 }

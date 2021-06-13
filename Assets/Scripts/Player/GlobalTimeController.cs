@@ -49,10 +49,16 @@ public class GlobalTimeController : MonoBehaviour
 
     }
     public void SetEnabled(){
+        Debug.Log("GlobalTime Enabled!");
         isEnabled = true;
+        Time.timeScale  = 1;
+        rootClock.localTimeScale = 1;
     }
     public void Pause(){
-
+        Debug.Log("GlobalTime Pause!");
+        isEnabled = false;
+        Time.timeScale  = 0;
+        rootClock.localTimeScale = 0;
     }
 
     public void setAction(bool _action){
