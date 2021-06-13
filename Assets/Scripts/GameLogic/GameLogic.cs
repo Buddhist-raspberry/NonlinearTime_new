@@ -12,15 +12,10 @@ public class GameLogic : MonoBehaviour
     bool isPause = false;
     public GameObject gameOverUI;
     public GameObject gameRestartUI;
-    public GameObject postprocessing;
 
-    private Volume volume_gaming;
-    private Volume volume_dead;
+    public GameObject volume_gaming;
+    public GameObject volume_dead;
     
-    void Awake() {
-        volume_gaming = postprocessing.GetComponents<Volume>()[0];
-        volume_dead = postprocessing.GetComponents<Volume>()[1];
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +33,8 @@ public class GameLogic : MonoBehaviour
         GlobalTimeController.instance.Pause();
         gameOverUI.SetActive(true);
         gameRestartUI.SetActive(true);
-        volume_gaming.weight = 0;
-        volume_dead.weight = 1.0f;
+        volume_gaming.SetActive(false);
+        volume_dead.SetActive(true);
     }
     public void GameStart()
     {
@@ -47,8 +42,8 @@ public class GameLogic : MonoBehaviour
         gameRestartUI.SetActive(false);
         isStart = true;
         isEnd = isPause = false;
-        volume_gaming.weight = 1.0f;
-        volume_dead.weight = 0;
+        volume_gaming.SetActive(true);
+        volume_dead.SetActive(false);
     }
 
     public void GameRestart()
@@ -61,8 +56,6 @@ public class GameLogic : MonoBehaviour
         Cursor.visible = true;
         Debug.Log("重新开始");
         SceneManager.LoadScene("Level1");
-        volume_gaming.weight = 1.0f;
-        volume_dead.weight = 0;
     }
     public void GameOver()
     {
