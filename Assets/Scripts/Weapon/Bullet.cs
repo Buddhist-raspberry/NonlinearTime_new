@@ -6,7 +6,7 @@ using Chronos;
 public class Bullet : ChronosBehaviour
 {
     public float speed;
-    private int harmHP = 8;
+    public int harmHP = 8;
     public float destroyTime = 3.0f;
     void Start()
     {
