@@ -44,7 +44,8 @@ public class PlayerProperty : HealthController
         }
     }
     public int getPlayHP(){return currentHP;}
-    public int getPlayMP(){return currentHP;}
+    public int getPlayAccMP(){return currentAccMP;}
+    public int getPlayDecMP(){return currentDecMP;}
     // 回血
     public void recoverHP(int value)
     {

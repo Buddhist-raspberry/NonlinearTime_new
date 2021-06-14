@@ -110,9 +110,21 @@ public class PlayerController : MonoBehaviour
             {
                 ChronosBehaviour t_chronosBehaviour = hit.transform.GetComponent<ChronosBehaviour>();
                 float currentTimeScale = t_chronosBehaviour.GetLocalTimeScale();
+                // float _factor;
+                // if (Input.GetAxis("Mouse ScrollWheel") <= 0) _factor = -1;
+                // else _factor = 1;
                 float _factor;
                 if (Input.GetAxis("Mouse ScrollWheel") <= 0) _factor = -1;
                 else _factor = 1;
+
+                if (_factor == -1 && PlayerProperty.instance.getPlayDecMP()==0) {
+                    _factor = 0;
+                    Debug.Log("减速魔法值DecMP为0");
+                }
+                if (_factor == 1 && PlayerProperty.instance.getPlayAccMP()==0) {
+                    _factor = 0;
+                    Debug.Log("加速魔法值AccMP为0");
+                }
 
                 if (currentTimeScale<=1) currentTimeScale += _factor * 0.1f;
                 else currentTimeScale += _factor * 1f;
