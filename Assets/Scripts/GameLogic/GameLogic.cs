@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour
     bool isPause = false;
     public GameObject gameOverUI;
     public GameObject gameRestartUI;
+    public GameObject gamePauseUI;
 
     public GameObject volume_gaming;
     public GameObject volume_dead;
@@ -25,7 +26,14 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            gamePauseUI.SetActive(true);
+            //GlobalTimeController.instance.Pause();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            GamePause();
+        }
     }
     public void Die()
     {
@@ -62,5 +70,20 @@ public class GameLogic : MonoBehaviour
         isEnd = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public void GamePause()
+    {
+    }
+
+    public void GameResume()
+    {
+        gamePauseUI.SetActive(false);
+    }
+
+    public void BacktoMainMenu()
+    {
+        gamePauseUI.SetActive(false);
+        SceneManager.LoadScene("Menu_Scene");
     }
 }
