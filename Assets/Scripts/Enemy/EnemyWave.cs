@@ -12,8 +12,8 @@ public class EnemyWave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemies = GetComponentsInChildren<Enemy>();
-        enemyHealthControllers = GetComponentsInChildren<HealthController>();
+        enemies = GetComponentsInChildren<Enemy>(true);
+        enemyHealthControllers = GetComponentsInChildren<HealthController>(true);
         SetEnabled(defaultEnabled);
     }
 

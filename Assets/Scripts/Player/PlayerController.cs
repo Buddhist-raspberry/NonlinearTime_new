@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     };
     private UseStatus currentUseStatus = UseStatus.WEAPON;
 
+    private int MagicLeft = 0;
+
     [Header("Control")]
     public GameObject controlBall;
     
@@ -218,9 +220,17 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            if(MagicLeft<=0) return;
             ChangeUseStatus(UseStatus.MAGIC);
             return;
         }
+    }
+
+    public void AddMagic(int num){
+        MagicLeft += num;
+        MagicLeft = Mathf.Min(0,MagicLeft);
+        MagicLeft = Mathf.Max(1,MagicLeft);
+        return;
     }
 
     public void ChangeUseStatus(UseStatus status)
@@ -262,4 +272,5 @@ public class PlayerController : MonoBehaviour
         return status == currentUseStatus;    
     }
 
+    
 }
