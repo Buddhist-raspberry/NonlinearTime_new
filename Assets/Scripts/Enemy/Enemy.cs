@@ -42,7 +42,6 @@ public class Enemy : ChronosBehaviour
     public bool isEnabled = true;
     public State state = State.Idle;
     [Header("Time Control")]
-    public float speedDownTimeScale = 0.3f;     //减速程度
     public float speedDownTime = 3.0f;         //减速时间
     [Header("Material")]
     public Material m_material;
@@ -207,17 +206,10 @@ public class Enemy : ChronosBehaviour
     #endregion
 
     #region 公有函数
-    public void SpeedDown()     //减速
+    public void SpeedDown(float speedDownTimeScale)     //减速
     {
         _SpeedDown(speedDownTimeScale);
         Debug.Log("SpeedDown!");
-
-    }
-    public void SpeedDownForAWhile()    //减速一段时间
-    {
-        _SpeedDown(speedDownTimeScale);
-        Debug.Log("SpeedDown For A While!");
-        Invoke("RevocerTimeScale", speedDownTime);
 
     }
     public void SetEnabled(bool _isEnabled){

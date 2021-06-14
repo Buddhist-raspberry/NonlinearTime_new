@@ -6,25 +6,27 @@ using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [HideInInspector]
     public static PlayerController instance;
-
+    [Header("Status")]
     public float charge;
     public bool canShoot = true;
+    public bool canMagic = true;
     public bool isEnabled = false;
     public bool action;
     public enum UseStatus{
         CONTROL,WEAPON,MAGIC
     };
     private UseStatus currentUseStatus = UseStatus.WEAPON;
-    private MagicController m_magicController;
 
     [Header("Control")]
     public GameObject controlBall;
     
     [Header("Magic")]
-    public Magic ownMagic;
-
+    public GameObject magicBar;
+    public GameObject magicPrefab;
+    private GameObject ownMagic;
+    
     [Space]
     [Header("Weapon")]
     public Weapon weapon;
@@ -50,7 +52,6 @@ public class PlayerController : MonoBehaviour
         instance = this;
         if (weaponHolder.GetComponentInChildren<Weapon>() != null)
             weapon = weaponHolder.GetComponentInChildren<Weapon>();
-        m_magicController = GetComponent<MagicController>();
         _selection = null;
     }
     // Update is called once per frame
@@ -89,7 +90,14 @@ public class PlayerController : MonoBehaviour
                 weapon = null;
             }
         }
-        
+        //放置光环
+        if (CheckStatus(UseStatus.MAGIC)&&canMagic&&Input.GetMouseButtonDown(0))
+        {
+            if(ownMagic!=null){
+                ownMagic.GetComponent<Magic>().SetPlacing(false);
+                ownMagic = null;
+            }
+        }
 
         
         RaycastHit hit;
@@ -210,30 +218,29 @@ public class PlayerController : MonoBehaviour
         {
             currentUseStatus = UseStatus.CONTROL;
             controlBall.SetActive(true);
+            magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(false);
-            if (ownMagic != null)
-                ownMagic.gameObject.SetActive(false);
             return;
         }
         if (status == UseStatus.WEAPON)
         {
             currentUseStatus = UseStatus.WEAPON;
             controlBall.SetActive(false);
+            magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(true);
-            if (ownMagic != null)
-                ownMagic.gameObject.SetActive(false);
             return;
         }
-        if (status == UseStatus.MAGIC)
+        if (status == UseStatus.MAGIC&&canMagic)
         {
             currentUseStatus = UseStatus.MAGIC;
             controlBall.SetActive(false);
+            magicBar.SetActive(true);
             if (weapon != null)
                 weapon.gameObject.SetActive(false);
-            if (ownMagic != null)
-                ownMagic.gameObject.SetActive(true);
+            ownMagic = GameObject.Instantiate(magicPrefab);
+            ownMagic.GetComponent<Magic>().SetPlacing(true);
             return;
         }
     }
