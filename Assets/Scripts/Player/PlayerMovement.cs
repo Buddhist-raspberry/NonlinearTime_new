@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     //Urg that's ugly, maybe find a better way
-    public static PlayerMovement Instance { get; protected set; }
+    public static PlayerMovement Instance;
 
     public Camera MainCamera;
     

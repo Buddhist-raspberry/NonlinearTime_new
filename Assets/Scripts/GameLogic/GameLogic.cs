@@ -10,63 +10,76 @@ public class GameLogic : MonoBehaviour
     bool isStart = false;
     bool isEnd = false;
     bool isPause = false;
+    public GameObject gamingUI;
     public GameObject gameOverUI;
-    public GameObject gameRestartUI;
     public GameObject gamePauseUI;
 
     public GameObject volume_gaming;
     public GameObject volume_dead;
+    public GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        GameStart();
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (isStart&&!isPause&&!isEnd)
         {
-            gamePauseUI.SetActive(true);
-            //GlobalTimeController.instance.Pause();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            GamePause();
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                gamePauseUI.SetActive(true);
+                gamingUI.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                GamePause();
+            }
         }
+        else if(isStart&&isPause&&!isEnd)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                gamingUI.SetActive(true);
+                gamePauseUI.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                GameResume();
+            }
+        }
+
     }
     public void Die()
     {
         GameOver();
         GlobalTimeController.instance.Pause();
         gameOverUI.SetActive(true);
-        gameRestartUI.SetActive(true);
+        gamePauseUI.SetActive(false);
+        gamingUI.SetActive(false);
         volume_gaming.SetActive(false);
         volume_dead.SetActive(true);
     }
     public void GameStart()
     {
         gameOverUI.SetActive(false);
-        gameRestartUI.SetActive(false);
+        gamePauseUI.SetActive(false);
+        gamingUI.SetActive(true);
         isStart = true;
         isEnd = isPause = false;
         volume_gaming.SetActive(true);
         volume_dead.SetActive(false);
+        Debug.Log("GameStart!");
     }
 
     public void GameRestart()
     {
-        gameOverUI.SetActive(false);
-        gameRestartUI.SetActive(false);
-        isStart = true;
-        isEnd = isPause = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
         Debug.Log("重新开始");
         SceneManager.LoadScene("Level1");
     }
     public void GameOver()
     {
+        GamePause();
         isEnd = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -74,11 +87,22 @@ public class GameLogic : MonoBehaviour
 
     public void GamePause()
     {
+        isPause = true;
+        player.GetComponent<PlayerController>().isEnabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<GlobalTimeController>().Pause();
+        player.GetComponent<CharacterController>().enabled = false;
+        Debug.Log("GamePause!");
     }
 
     public void GameResume()
     {
-        gamePauseUI.SetActive(false);
+        isPause = false;
+        player.GetComponent<PlayerController>().isEnabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<GlobalTimeController>().SetEnabled();
+        player.GetComponent<CharacterController>().enabled = true;
+        Debug.Log("GameResume!");
     }
 
     public void BacktoMainMenu()
