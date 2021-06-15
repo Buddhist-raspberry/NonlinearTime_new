@@ -246,6 +246,9 @@ public class PlayerController : MonoBehaviour
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(false);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
         if (status == UseStatus.WEAPON)
@@ -255,6 +258,9 @@ public class PlayerController : MonoBehaviour
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(true);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
         if (status == UseStatus.MAGIC&&MagicLeft>0)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicIntroduce : MonoBehaviour
+public class Introduction : MonoBehaviour
 {
     public GameObject introduceCaption;
 
@@ -18,6 +18,4 @@ public class MagicIntroduce : MonoBehaviour
             introduceCaption.SetActive(false);
         }
     }
-
-
 }
