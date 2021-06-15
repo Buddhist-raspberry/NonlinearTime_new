@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor.Sprites;
 public class BGM:MonoBehaviour
 {
   public GameObject btnObj;//定义按钮
