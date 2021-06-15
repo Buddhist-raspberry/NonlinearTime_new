@@ -79,7 +79,7 @@ public abstract class Weapon : ChronosBehaviour
     {
         if (!active)
             return;
-        Debug.Log("PickUP");
+        Debug.Log("PickUP"+gameObject.name);
         playerController.weapon = this;
         ChangeSettings();
 
@@ -95,7 +95,6 @@ public abstract class Weapon : ChronosBehaviour
         transform.parent = null;
         rb.isKinematic = false;
         m_collider.isTrigger = false;
-
         rb.AddForce((Camera.main.transform.position - transform.position) * 2, ForceMode.Impulse);
         rb.AddForce(Vector3.up * 2, ForceMode.Impulse);
 

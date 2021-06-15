@@ -59,4 +59,8 @@ public class HealthController : MonoBehaviour
         Slider hpFillSlider = GetComponentsInChildren<Slider>()[0];
         hpFillSlider.value = (float)(currentHealth / maxHealth);
     }
+
+    public void Disable(){
+        hpBar.SetActive(false);
+    }
 }
