@@ -18,9 +18,8 @@ public class PowercellStory : StoryItemBase
     }
     void gameStart(){
         if(powercellTimeline.state==PlayState.Paused){
-            player.GetComponent<PlayerController>().isEnabled = true;
+            GameLogic.instance.GameResume();
             player.GetComponent<PlayerController>().ChangeUseStatus(PlayerController.UseStatus.CONTROL);
-            player.GetComponent<GlobalTimeController>().isEnabled = true;
             TimeSlowTimeline.Play();
             powercell.SetActive(false);
             gameObject.SetActive(false);
