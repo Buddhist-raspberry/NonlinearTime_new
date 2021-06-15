@@ -16681,6 +16681,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1512417402, guid: 131e48547fa86484a80952693d16cb3d, type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512417402, guid: 131e48547fa86484a80952693d16cb3d, type: 3}
       propertyPath: m_SceneBindings.Array.size
       value: 1
       objectReference: {fileID: 0}
