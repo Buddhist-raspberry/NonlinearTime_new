@@ -105,7 +105,20 @@ public class GameLogic : MonoBehaviour
         // Debug.Log("GamePause!");
         bgm.stop();
     }
-
+    public void GamePauseUI(){
+        gamePauseUI.SetActive(true);
+        gamingUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        GamePause();
+    }
+    public void GameResumeUI(){
+        gamingUI.SetActive(true);
+        gamePauseUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        GameResume();
+    }
     public void GameResume()
     {
         isPause = false;

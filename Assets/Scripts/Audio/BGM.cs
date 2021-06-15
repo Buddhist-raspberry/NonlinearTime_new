@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor.Sprites;
 public class BGM:MonoBehaviour
 {
   public static BGM instance { get; protected set; }
