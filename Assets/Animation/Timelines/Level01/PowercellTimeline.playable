@@ -132,10 +132,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
-    m_ClipIn: 0
+    m_Start: 0.16666666666666666
+    m_ClipIn: 0.16666666666666666
     m_Asset: {fileID: 8844288256587486871}
-    m_Duration: 0.5
+    m_Duration: 0.33333333333333337
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4919353037744487480}
     m_EaseInDuration: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 0
+    m_PreExtrapolationTime: 0.16666666666666666
     m_DisplayName: Empty
   m_Markers:
     m_Objects: []
