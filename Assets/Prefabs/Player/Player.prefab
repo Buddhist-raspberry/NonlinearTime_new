@@ -145,7 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 0
   canShoot: 0
-  canMagic: 1
   isEnabled: 0
   action: 0
   currentUseStatus: 1

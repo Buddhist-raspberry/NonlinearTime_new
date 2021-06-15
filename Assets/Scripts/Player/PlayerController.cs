@@ -85,11 +85,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         //放置光环
-        if (CheckStatus(UseStatus.MAGIC)&&canMagic&&Input.GetMouseButtonDown(0))
+        if (CheckStatus(UseStatus.MAGIC)&&MagicLeft>0&&Input.GetMouseButtonDown(0))
         {
             if(ownMagic!=null){
                 ownMagic.GetComponent<Magic>().SetPlacing(false);
                 ownMagic = null;
+                MagicLeft -=1;
             }
         }
 
@@ -232,9 +233,13 @@ public class PlayerController : MonoBehaviour
         {
             currentUseStatus = UseStatus.CONTROL;
             controlBall.SetActive(true);
+            Debug.Log("Change to powercell");
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(false);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
         if (status == UseStatus.WEAPON)
@@ -244,9 +249,12 @@ public class PlayerController : MonoBehaviour
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(true);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
-        if (status == UseStatus.MAGIC&&canMagic)
+        if (status == UseStatus.MAGIC&&MagicLeft>0)
         {
             currentUseStatus = UseStatus.MAGIC;
             controlBall.SetActive(false);
