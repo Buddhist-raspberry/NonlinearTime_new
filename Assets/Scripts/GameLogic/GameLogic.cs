@@ -17,6 +17,7 @@ public class GameLogic : MonoBehaviour
     public GameObject volume_gaming;
     public GameObject volume_dead;
     public GameObject player;
+    public AudioSource bgm; 
     
     // Start is called before the first frame update
     void Awake()
@@ -70,6 +71,7 @@ public class GameLogic : MonoBehaviour
         volume_gaming.SetActive(true);
         volume_dead.SetActive(false);
         Debug.Log("GameStart!");
+        bgm.Play();
     }
 
     public void GameRestart()
@@ -92,7 +94,8 @@ public class GameLogic : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<GlobalTimeController>().Pause();
         player.GetComponent<CharacterController>().enabled = false;
-        Debug.Log("GamePause!");
+        bgm.Stop();
+        // Debug.Log("GamePause!");
     }
 
     public void GameResume()
@@ -102,6 +105,7 @@ public class GameLogic : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<GlobalTimeController>().SetEnabled();
         player.GetComponent<CharacterController>().enabled = true;
+        bgm.Play();
         Debug.Log("GameResume!");
     }
 

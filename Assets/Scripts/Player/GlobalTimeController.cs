@@ -56,7 +56,7 @@ public class GlobalTimeController : MonoBehaviour
         rootClock.localTimeScale = 1;
     }
     public void Pause(){
-        Debug.Log("GlobalTime Pause!");
+        // Debug.Log("GlobalTime Pause!");
         isEnabled = false;
         // Time.timeScale  = 0;
         rootClock.localTimeScale = 0;
