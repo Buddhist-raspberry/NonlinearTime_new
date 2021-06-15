@@ -6,13 +6,13 @@ public class EnemyGlowing : Glowing
 {
     SkinnedMeshRenderer[] renderers;
     [ColorUsageAttribute(true,true)]
-    public Color SpeedUpColor;
+    public Color SpeedUpColor = new Color(0,2,32f/255,0f);
     [ColorUsageAttribute(true,true)]
-    public Color SpeedDownColor;
+    public Color SpeedDownColor= new Color(1,0f/255,0,0);
     [ColorUsageAttribute(true,true)]
-    public Color InvertColor;
+    public Color InvertColor= new Color(18f/255,186f/255,1,0);
     [ColorUsageAttribute(true,true)]
-    public Color SelectedColor;
+    public Color SelectedColor= new Color(1,218f/255,37f/255,0);
 
     protected override void Start(){
         base.Start();

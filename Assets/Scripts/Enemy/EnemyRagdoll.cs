@@ -52,7 +52,7 @@ public class EnemyRagdoll : MonoBehaviour
             rigidbody.isKinematic = false;
             rigidbody.velocity = Vector3.zero;
             if(rigidbody.transform.name == "Head"){
-                Debug.Log(rigidbody);
+                //Debug.Log(rigidbody);
                 rigidbody.AddForce(-transform.forward*fallForce);
             }
         }
