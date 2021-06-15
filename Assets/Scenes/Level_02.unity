@@ -17711,7 +17711,7 @@ MonoBehaviour:
   afterStoryItems: []
   _requiredStoryItems:
   - {fileID: 136790593}
-  next_level: level_04
+  next_level: level_03
 --- !u!65 &1177983317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32331,7 +32331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: 0
   canControl: 1
-  canMagic: 1
   isEnabled: 1
   action: 0
   currentUseStatus: 1
@@ -34489,7 +34488,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!4 &855165666316100425
 Transform:
@@ -34658,7 +34657,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!23 &855165667037469816
 MeshRenderer:
@@ -34869,7 +34868,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!54 &855165667233347298
 Rigidbody:
@@ -34922,7 +34921,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!4 &855165667445546583
 Transform:
@@ -35061,7 +35060,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!4 &855165667809128475
 Transform:
@@ -35288,7 +35287,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!4 &855165667827759935
 Transform:
@@ -35425,7 +35424,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!54 &855165668045176186
 Rigidbody:
@@ -35492,7 +35491,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!23 &855165668125627828
 MeshRenderer:
@@ -35601,7 +35600,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 5
+  damagePerVelocity: 0.2
   speedMaterial: {fileID: 2100000, guid: e31d66a783b4a114e95724d6d26d3fef, type: 2}
 --- !u!4 &855165668226865241
 Transform:
