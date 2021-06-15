@@ -10,14 +10,18 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     [Header("Status")]
     public float charge;
-    public bool canShoot = true;
+    public bool canControl = true;
     public bool canMagic = true;
     public bool isEnabled = false;
     public bool action;
+    
     public enum UseStatus{
         CONTROL,WEAPON,MAGIC
     };
-    private UseStatus currentUseStatus = UseStatus.WEAPON;
+    [HideInInspector]
+    public UseStatus currentUseStatus = UseStatus.WEAPON;
+
+    private int MagicLeft = 0;
 
     [Header("Control")]
     public GameObject controlBall;
@@ -64,18 +68,8 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(ActionE(.03f));
             StartCoroutine(ActionE(.03f));
             if (weapon != null){
-                switch(weapon.weaponType){
-                    case Weapon.WeaponType.GUN: 
-                        if(canShoot){
-                            ((Gun)weapon).Shoot(SpawnPos(), 
-                                Camera.main.transform.rotation, false);
-                        }
-                        break;
-                    default:
-                        weapon.Throw();
-                        weapon = null;
-                        break;
-                }
+                weapon.Throw();
+                weapon = null;
             }
         }
         //抛弃武器
@@ -91,11 +85,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         //放置光环
-        if (CheckStatus(UseStatus.MAGIC)&&canMagic&&Input.GetMouseButtonDown(0))
+        if (CheckStatus(UseStatus.MAGIC)&&MagicLeft>0&&Input.GetMouseButtonDown(0))
         {
             if(ownMagic!=null){
                 ownMagic.GetComponent<Magic>().SetPlacing(false);
                 ownMagic = null;
+                MagicLeft -=1;
             }
         }
 
@@ -118,9 +113,21 @@ public class PlayerController : MonoBehaviour
             {
                 ChronosBehaviour t_chronosBehaviour = hit.transform.GetComponent<ChronosBehaviour>();
                 float currentTimeScale = t_chronosBehaviour.GetLocalTimeScale();
+                // float _factor;
+                // if (Input.GetAxis("Mouse ScrollWheel") <= 0) _factor = -1;
+                // else _factor = 1;
                 float _factor;
                 if (Input.GetAxis("Mouse ScrollWheel") <= 0) _factor = -1;
                 else _factor = 1;
+
+                if (_factor == -1 && PlayerProperty.instance.getPlayDecMP()==0) {
+                    _factor = 0;
+                    Debug.Log("减速魔法值DecMP为0");
+                }
+                if (_factor == 1 && PlayerProperty.instance.getPlayAccMP()==0) {
+                    _factor = 0;
+                    Debug.Log("加速魔法值AccMP为0");
+                }
 
                 if (currentTimeScale<=1) currentTimeScale += _factor * 0.1f;
                 else currentTimeScale += _factor * 1f;
@@ -206,21 +213,33 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            if(MagicLeft<=0) return;
             ChangeUseStatus(UseStatus.MAGIC);
             return;
         }
     }
 
+    public void AddMagic(int num){
+        MagicLeft += num;
+        MagicLeft = Mathf.Min(0,MagicLeft);
+        MagicLeft = Mathf.Max(1,MagicLeft);
+        return;
+    }
+
     public void ChangeUseStatus(UseStatus status)
     {
         
-        if (status == UseStatus.CONTROL)
+        if (status == UseStatus.CONTROL&&canControl)
         {
             currentUseStatus = UseStatus.CONTROL;
             controlBall.SetActive(true);
+            Debug.Log("Change to powercell");
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(false);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
         if (status == UseStatus.WEAPON)
@@ -230,9 +249,12 @@ public class PlayerController : MonoBehaviour
             magicBar.SetActive(false);
             if (weapon != null)
                 weapon.gameObject.SetActive(true);
+            if (ownMagic != null){
+                GameObject.Destroy(ownMagic.gameObject);
+            }
             return;
         }
-        if (status == UseStatus.MAGIC&&canMagic)
+        if (status == UseStatus.MAGIC&&MagicLeft>0)
         {
             currentUseStatus = UseStatus.MAGIC;
             controlBall.SetActive(false);
@@ -250,4 +272,5 @@ public class PlayerController : MonoBehaviour
         return status == currentUseStatus;    
     }
 
+    
 }

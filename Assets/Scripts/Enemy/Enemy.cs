@@ -30,6 +30,7 @@ public class Enemy : ChronosBehaviour
     [Header("Objects")]
     public GameObject bulletPrefab;         //子弹预制体
     public LayerMask playerLayer;
+    public AudioSource bgm; 
 
     public enum State
     {
@@ -74,6 +75,7 @@ public class Enemy : ChronosBehaviour
     }
     private void Update()
     {
+
         if(!isEnabled) return;
         checkDead();
         switch (state)
@@ -140,9 +142,11 @@ public class Enemy : ChronosBehaviour
         m_navMeshAgent.enabled = false;
         m_collider.enabled =false;
         time.enabled = false;
+        m_healthController.Disable();
         GetComponent<EnemyGlowing>().SetNormal();
         GetComponent<EnemyGlowing>().enabled =false;
         GetComponent<EnemyRagdoll>().Ragdoll();
+        GetComponent<Rigidbody>().useGravity = true;
 
     }
 
@@ -188,6 +192,7 @@ public class Enemy : ChronosBehaviour
              transform.forward, transform.rotation);
         bullet.transform.parent = null;
         fireCd = Time.time + fireInterval;
+        bgm.Play();
     }
     bool IsInPosition(Vector3 pos)      //是否在pos位置
     {

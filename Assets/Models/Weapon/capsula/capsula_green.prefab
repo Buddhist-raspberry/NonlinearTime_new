@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8623594656098814623}
   - component: {fileID: 8610444397526064572}
   - component: {fileID: 4674895507375583093}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,8 +90,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3963228282595555555}
-  m_Layer: 0
-  m_Name: capsula_small
+  - component: {fileID: 1163472963}
+  - component: {fileID: 1163472964}
+  - component: {fileID: 1163472962}
+  - component: {fileID: 1163472965}
+  - component: {fileID: 1163472966}
+  m_Layer: 10
+  m_Name: capsula_green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,16 +109,96 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4344821023147024985}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 3.07}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 5134586580524157422}
   - {fileID: 8623594656098814623}
   - {fileID: 8650102217140301295}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+--- !u!54 &1163472963
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344821023147024985}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &1163472964
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344821023147024985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.015
+  m_Height: 0.075
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.038}
+--- !u!114 &1163472962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344821023147024985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4f1d94ad611994f836416b7ce6b4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  recoverValue: 30
+  type: 1
+  reloadTime: 0.3
+  damagePerVelocity: 5
+--- !u!114 &1163472965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344821023147024985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e02c4a0d9b6c47e09fc7c7924d2b953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localTimeScale: 1
+  _paused: 0
+  _parentKey: 
+  _parentBlend: 0
+--- !u!114 &1163472966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344821023147024985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6090da511f8374135a15dd8655adcd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _recordingInterval: 0.5
+  _mode: 0
+  _globalClockKey: 
+  _rewindable: 1
+  _recordingDuration: 30
 --- !u!1 &4708078412699287710
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +210,7 @@ GameObject:
   - component: {fileID: 5134586580524157422}
   - component: {fileID: 6563667136621325933}
   - component: {fileID: 7432631456104544882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +291,7 @@ GameObject:
   - component: {fileID: 8650102217140301295}
   - component: {fileID: 7753469450357112646}
   - component: {fileID: 6352985347511456328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

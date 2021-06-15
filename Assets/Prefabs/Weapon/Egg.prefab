@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 855165667511181737}
   - component: {fileID: 984251715}
   - component: {fileID: 984251720}
+  - component: {fileID: 1610530964}
   m_Layer: 7
   m_Name: Egg
   m_TagString: Untagged
@@ -132,7 +133,11 @@ MonoBehaviour:
   reloading: 0
   speedUpTimeScale: 3
   speedUpTime: 3
+  throwPower: 10
+  useMP: 0
   reloadTime: 0.3
+  damagePerVelocity: 5
+  speedMaterial: {fileID: 0}
 --- !u!114 &984251715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +168,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
   _mode: 0
-  _globalClockKey: 
+  _globalClockKey: Root
   _rewindable: 1
   _recordingDuration: 30
+--- !u!114 &1610530964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855165667511181716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb00469268697f428528af93387497c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedUpColor: {r: 0, g: 1, b: 0.37633967, a: 0}
+  SpeedDownColor: {r: 1, g: 0, b: 0, a: 0}
+  InvertColor: {r: 0, g: 0.9226117, b: 1, a: 0}
+  SelectedColor: {r: 0.9245283, g: 0.6576614, b: 0, a: 0}
