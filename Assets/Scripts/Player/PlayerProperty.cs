@@ -29,7 +29,7 @@ public class PlayerProperty : HealthController
     // Update is called once per frame
     void Update()
     {
-        checkPlayerHP();
+        // checkPlayerHP();
     }
     
     IEnumerator ActionE(float time)
@@ -77,6 +77,7 @@ public class PlayerProperty : HealthController
         currentHP -= value;
         currentHP = currentHP >= 0?currentHP:0;
         Debug.Log("reduce HP: "+currentHP);
+        checkPlayerHP();
     }
     public void reduceAccMP(int value)
     {

@@ -9,6 +9,7 @@ public class GameLogic : MonoBehaviour
     public static GameLogic instance { get; protected set; }
     bool isStart = false;
     bool isEnd = false;
+    bool isPlaying = false;
     bool isPause = false;
     public GameObject gamingUI;
     public GameObject gameOverUI;
@@ -17,6 +18,7 @@ public class GameLogic : MonoBehaviour
     public GameObject volume_gaming;
     public GameObject volume_dead;
     public GameObject player;
+    public BGM bgm;
     
     // Start is called before the first frame update
     void Awake()
@@ -59,6 +61,7 @@ public class GameLogic : MonoBehaviour
         gamingUI.SetActive(false);
         volume_gaming.SetActive(false);
         volume_dead.SetActive(true);
+        Debug.Log("die");
     }
     public void GameStart()
     {
@@ -70,6 +73,7 @@ public class GameLogic : MonoBehaviour
         volume_gaming.SetActive(true);
         volume_dead.SetActive(false);
         Debug.Log("GameStart!");
+        bgm.gameStart();
     }
 
     public void GameRestart()
@@ -83,6 +87,12 @@ public class GameLogic : MonoBehaviour
         isEnd = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Debug.Log(!isPlaying);
+        // if(isEnd == true && isPlaying == false){
+        if( !isPlaying && isEnd){
+            isPlaying = true;
+            bgm.fail();
+        }
     }
 
     public void GamePause()
@@ -92,7 +102,8 @@ public class GameLogic : MonoBehaviour
         player.GetComponent<PlayerMovement>().enabled = false;
         player.GetComponent<GlobalTimeController>().Pause();
         player.GetComponent<CharacterController>().enabled = false;
-        Debug.Log("GamePause!");
+        // Debug.Log("GamePause!");
+        bgm.stop();
     }
     public void GamePauseUI(){
         gamePauseUI.SetActive(true);
@@ -116,6 +127,7 @@ public class GameLogic : MonoBehaviour
         player.GetComponent<GlobalTimeController>().SetEnabled();
         player.GetComponent<CharacterController>().enabled = true;
         Debug.Log("GameResume!");
+        bgm.gameStart();
     }
 
     public void BacktoMainMenu()

@@ -192,13 +192,7 @@ public class Enemy : ChronosBehaviour
              transform.forward, transform.rotation);
         bullet.transform.parent = null;
         fireCd = Time.time + fireInterval;
-        // Debug.Log("fired");
-        // Vector3.Distance(transform.position,rightpos.position);
-        // float dis = (transform.position - player.position).sqrMagnitude
-        // Debug.Log(dis);
-        // AudioSource bgm = bulletPrefab.GetComponent <AudioSource>();
         bgm.Play();
-        // bgm.time = 0;
     }
     bool IsInPosition(Vector3 pos)      //是否在pos位置
     {
