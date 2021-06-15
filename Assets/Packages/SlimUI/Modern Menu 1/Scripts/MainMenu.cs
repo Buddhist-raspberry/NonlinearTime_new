@@ -77,6 +77,8 @@ namespace SlimUI.ModernMenu
         public GameObject loadingMenu;
         public Slider loadBar;
         public TMP_Text finishedLoadingText;
+        [Header("Mine")]
+        public Image logo;
 
         void Start()
         {
@@ -116,6 +118,7 @@ namespace SlimUI.ModernMenu
         {
             DisableMenus();
             menus[menuIndex].SetActive(true);
+            logo.enabled = false;
         }
 
         public void NewGame(int level)
