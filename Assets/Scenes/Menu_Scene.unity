@@ -507,7 +507,6 @@ GameObject:
   - component: {fileID: 469719820}
   - component: {fileID: 469719819}
   - component: {fileID: 469719821}
-  - component: {fileID: 469719822}
   m_Layer: 5
   m_Name: logo
   m_TagString: Untagged
@@ -593,45 +592,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &469719822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469719817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81bc16ca95894c34b836ea33671ae46d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMobile: 0
-  sceneName: l
-  theme: 0
-  themeController: {fileID: 0}
-  menus: []
-  mainCanvas: {fileID: 0}
-  PanelControls: {fileID: 0}
-  PanelVideo: {fileID: 0}
-  PanelGame: {fileID: 0}
-  PanelKeyBindings: {fileID: 0}
-  PanelMovement: {fileID: 0}
-  PanelCombat: {fileID: 0}
-  PanelGeneral: {fileID: 0}
-  hoverSound: {fileID: 0}
-  sliderSound: {fileID: 0}
-  swooshSound: {fileID: 0}
-  lineGame: {fileID: 0}
-  lineVideo: {fileID: 0}
-  lineControls: {fileID: 0}
-  lineKeyBindings: {fileID: 0}
-  lineMovement: {fileID: 0}
-  lineCombat: {fileID: 0}
-  lineGeneral: {fileID: 0}
-  loadingMenu: {fileID: 0}
-  loadBar: {fileID: 0}
-  finishedLoadingText: {fileID: 0}
-  logo: {fileID: 469719819}
 --- !u!1 &486905351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,7 +3916,6 @@ GameObject:
   - component: {fileID: 95154561628650657}
   - component: {fileID: 114173851760721469}
   - component: {fileID: 114322424524768717}
-  - component: {fileID: 114765211391815285}
   - component: {fileID: 1213614133249756}
   m_Layer: 0
   m_Name: Camera
@@ -15418,7 +15377,7 @@ MonoBehaviour:
   loadingMenu: {fileID: 1970015877080473}
   loadBar: {fileID: 114530543238179655}
   finishedLoadingText: {fileID: 114744936572946683}
-  logo: {fileID: 0}
+  logo: {fileID: 469719817}
 --- !u!114 &114174685741294417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16543,7 +16502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6677432, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.68602705, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24386,18 +24345,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &114765211391815285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213614133249755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114766438141765593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32987,7 +32934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -910, y: 0}
+  m_AnchoredPosition: {x: -909.99994, y: 0}
   m_SizeDelta: {x: 7.49995, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224807270279484503
