@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     [Header("Status")]
     public float charge;
-    public bool canShoot = true;
+    public bool canControl = true;
     public bool canMagic = true;
     public bool isEnabled = false;
     public bool action;
@@ -68,18 +68,8 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(ActionE(.03f));
             StartCoroutine(ActionE(.03f));
             if (weapon != null){
-                switch(weapon.weaponType){
-                    case Weapon.WeaponType.GUN: 
-                        if(canShoot){
-                            ((Gun)weapon).Shoot(SpawnPos(), 
-                                Camera.main.transform.rotation, false);
-                        }
-                        break;
-                    default:
-                        weapon.Throw();
-                        weapon = null;
-                        break;
-                }
+                weapon.Throw();
+                weapon = null;
             }
         }
         //抛弃武器
@@ -238,7 +228,7 @@ public class PlayerController : MonoBehaviour
     public void ChangeUseStatus(UseStatus status)
     {
         
-        if (status == UseStatus.CONTROL)
+        if (status == UseStatus.CONTROL&&canControl)
         {
             currentUseStatus = UseStatus.CONTROL;
             controlBall.SetActive(true);

@@ -148,6 +148,7 @@ MonoBehaviour:
   canMagic: 1
   isEnabled: 0
   action: 0
+  currentUseStatus: 1
   controlBall: {fileID: 2886830324726057301}
   magicBar: {fileID: 2886830324726057301}
   magicPrefab: {fileID: 8790764883211843809, guid: bd4fa05600eeda74a96db9f30e453ffa, type: 3}
@@ -501,17 +502,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4040224131395768319}
     m_Modifications:
-    - target: {fileID: 984251720, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
-      propertyPath: _globalClockKey
-      value: Root
-      objectReference: {fileID: 0}
     - target: {fileID: 855165667511181716, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
       propertyPath: m_Name
       value: Egg
-      objectReference: {fileID: 0}
-    - target: {fileID: 855165667511181716, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 855165667511181736, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
       propertyPath: m_RootOrder
@@ -556,14 +549,6 @@ PrefabInstance:
     - target: {fileID: 855165667511181736, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 855165667511181737, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
-      propertyPath: throwPower
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 855165667511181737, guid: a9af988e6deae1746837f08f8b342c72, type: 3}
-      propertyPath: speedMaterial
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9af988e6deae1746837f08f8b342c72, type: 3}

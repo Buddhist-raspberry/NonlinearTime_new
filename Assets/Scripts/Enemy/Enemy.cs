@@ -142,9 +142,11 @@ public class Enemy : ChronosBehaviour
         m_navMeshAgent.enabled = false;
         m_collider.enabled =false;
         time.enabled = false;
+        m_healthController.Disable();
         GetComponent<EnemyGlowing>().SetNormal();
         GetComponent<EnemyGlowing>().enabled =false;
         GetComponent<EnemyRagdoll>().Ragdoll();
+        GetComponent<Rigidbody>().useGravity = true;
 
     }
 
