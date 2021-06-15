@@ -167,6 +167,7 @@ namespace SlimUI.ModernMenu
             {
                 menus[i].SetActive(false);
             }
+            //logo.SetActive(true);
         }
 
         public void GamePanel()
