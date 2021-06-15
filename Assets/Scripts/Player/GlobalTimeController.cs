@@ -41,8 +41,9 @@ public class GlobalTimeController : MonoBehaviour
             lerpTime = action ? .1f : lerpTime;
 
 
-            // Time.timeScale = Mathf.Lerp(Time.timeScale, time, lerpTime);
-            rootClock.localTimeScale= Mathf.Lerp(Time.timeScale, time, lerpTime);
+            Time.timeScale = Mathf.Lerp(Time.timeScale, time, lerpTime);
+            // rootClock.localTimeScale= Mathf.Lerp(Time.timeScale, time, lerpTime);
+            rootClock.localTimeScale= Time.timeScale;
         }
 
 

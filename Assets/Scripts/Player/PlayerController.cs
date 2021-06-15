@@ -14,10 +14,12 @@ public class PlayerController : MonoBehaviour
     public bool canMagic = true;
     public bool isEnabled = false;
     public bool action;
+    
     public enum UseStatus{
         CONTROL,WEAPON,MAGIC
     };
-    private UseStatus currentUseStatus = UseStatus.WEAPON;
+    [HideInInspector]
+    public UseStatus currentUseStatus = UseStatus.WEAPON;
 
     [Header("Control")]
     public GameObject controlBall;
