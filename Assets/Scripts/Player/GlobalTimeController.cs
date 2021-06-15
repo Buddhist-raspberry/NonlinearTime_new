@@ -22,7 +22,7 @@ public class GlobalTimeController : MonoBehaviour
     void Start() {
         rootClock = Timekeeper.instance.Clock("Root");
         if(isEnabled){
-            Time.timeScale  = 1;
+            // Time.timeScale  = 1;
             rootClock.localTimeScale = 1;
         }
     }
@@ -42,7 +42,8 @@ public class GlobalTimeController : MonoBehaviour
 
 
             Time.timeScale = Mathf.Lerp(Time.timeScale, time, lerpTime);
-            rootClock.localTimeScale= Mathf.Lerp(Time.timeScale, time, lerpTime);
+            // rootClock.localTimeScale= Mathf.Lerp(Time.timeScale, time, lerpTime);
+            rootClock.localTimeScale= Time.timeScale;
         }
 
 
@@ -51,13 +52,13 @@ public class GlobalTimeController : MonoBehaviour
     public void SetEnabled(){
         Debug.Log("GlobalTime Enabled!");
         isEnabled = true;
-        Time.timeScale  = 1;
+        // Time.timeScale  = 1;
         rootClock.localTimeScale = 1;
     }
     public void Pause(){
         Debug.Log("GlobalTime Pause!");
         isEnabled = false;
-        Time.timeScale  = 0;
+        // Time.timeScale  = 0;
         rootClock.localTimeScale = 0;
     }
 
