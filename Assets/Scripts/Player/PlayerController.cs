@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     [Header("Status")]
     public float charge;
     public bool canControl = true;
-    public bool canMagic = true;
     public bool isEnabled = false;
     public bool action;
     
@@ -221,8 +220,8 @@ public class PlayerController : MonoBehaviour
 
     public void AddMagic(int num){
         MagicLeft += num;
-        MagicLeft = Mathf.Min(0,MagicLeft);
-        MagicLeft = Mathf.Max(1,MagicLeft);
+        MagicLeft = Mathf.Max(0,MagicLeft);
+        // MagicLeft = Mathf.Min(2,MagicLeft);
         return;
     }
 

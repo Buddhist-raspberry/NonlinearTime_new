@@ -122,7 +122,7 @@ MonoBehaviour:
   throwPower: 10
   useMP: 0
   reloadTime: 0.3
-  damagePerVelocity: 0.2
+  damagePerVelocity: 0.1
   speedMaterial: {fileID: 0}
 --- !u!114 &7824130510909080964
 MonoBehaviour:

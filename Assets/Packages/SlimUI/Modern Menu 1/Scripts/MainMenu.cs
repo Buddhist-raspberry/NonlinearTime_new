@@ -263,10 +263,10 @@ namespace SlimUI.ModernMenu
                 {
                     finishedLoadingText.gameObject.SetActive(true);
 
-                    if (Input.anyKeyDown)
-                    {
+                    // if (Input.anyKeyDown)
+                    // {
                         operation.allowSceneActivation = true;
-                    }
+                    // }
                 }
 
                 yield return null;
