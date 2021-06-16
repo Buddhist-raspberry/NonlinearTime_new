@@ -134,6 +134,7 @@ public class GameLogic : MonoBehaviour
     public void BacktoMainMenu()
     {
         gamePauseUI.SetActive(false);
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu_Scene");
     }
 }
