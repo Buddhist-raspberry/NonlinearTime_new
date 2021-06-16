@@ -1,11 +1,32 @@
 fileFormatVersion: 2
 guid: 81bc16ca95894c34b836ea33671ae46d
-timeCreated: 1522273438
-licenseType: Store
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - themeController: {instanceID: 0}
+  - mainCanvas: {instanceID: 0}
+  - PanelControls: {instanceID: 0}
+  - PanelVideo: {instanceID: 0}
+  - PanelGame: {instanceID: 0}
+  - PanelKeyBindings: {instanceID: 0}
+  - PanelMovement: {instanceID: 0}
+  - PanelCombat: {instanceID: 0}
+  - PanelGeneral: {instanceID: 0}
+  - hoverSound: {instanceID: 0}
+  - sliderSound: {instanceID: 0}
+  - swooshSound: {instanceID: 0}
+  - lineGame: {instanceID: 0}
+  - lineVideo: {instanceID: 0}
+  - lineControls: {instanceID: 0}
+  - lineKeyBindings: {instanceID: 0}
+  - lineMovement: {instanceID: 0}
+  - lineCombat: {instanceID: 0}
+  - lineGeneral: {instanceID: 0}
+  - loadingMenu: {instanceID: 0}
+  - loadBar: {instanceID: 0}
+  - finishedLoadingText: {instanceID: 0}
+  - logo: {fileID: 100002, guid: 98cb3ff54fbab489fba56f7b26d9a2aa, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

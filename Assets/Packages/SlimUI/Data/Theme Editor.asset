@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Theme Editor
   m_EditorClassIdentifier: 
   custom1:
-    graphic1: {r: 1, g: 0.68602705, b: 0, a: 1}
+    graphic1: {r: 0, g: 0.49408722, b: 1, a: 1}
     text1:
       serializedVersion: 2
       rgba: 4294967295
@@ -27,7 +27,7 @@ MonoBehaviour:
     text3:
       serializedVersion: 2
       rgba: 4293066721
-  currentColor: {r: 0, g: 0.6677432, b: 1, a: 1}
+  currentColor: {r: 0, g: 0.49408722, b: 1, a: 1}
   textColor:
     serializedVersion: 2
-    rgba: 4294966499
+    rgba: 4294967295

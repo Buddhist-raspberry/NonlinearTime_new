@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!90 &9000000
+Avatar:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Clock 9Avatar
+  m_AvatarSize: 948
+  m_Avatar:
+    serializedVersion: 3
+    m_AvatarSkeleton:
+      data:
+        m_Node:
+        - m_ParentId: -1
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        m_ID: 000000008dbd1a8a3d76f6e4a34a6ba05fbfcb18
+        m_AxesArray: []
+    m_AvatarSkeletonPose:
+      data:
+        m_X:
+        - t:
+            x: 0
+            y: 0
+            z: 0
+            w: 0
+          q:
+            x: 0
+            y: 0
+            z: 0
+            w: 1
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+        - t:
+            x: -.00166766346
+            y: 2.59278488
+            z: .951598644
+            w: 0
+          q:
+            x: -2.40955433e-08
+            y: -2.90583575e-08
+            z: .769779205
+            w: .638310254
+          s:
+            x: 1.07507181
+            y: 1.07507169
+            z: 16.2637062
+            w: 1
+        - t:
+            x: -.000163574208
+            y: 3.26883268
+            z: 1.22070304e-07
+            w: 0
+          q:
+            x: 2.18556941e-08
+            y: 0
+            z: 0
+            w: 1
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+        - t:
+            x: -.00108780176
+            y: 2.59310746
+            z: .9584288
+            w: 0
+          q:
+            x: 7.18010114e-08
+            y: 3.84760028e-08
+            z: .472328007
+            w: .881422877
+          s:
+            x: 1.07507122
+            y: 1.07507133
+            z: 15.9459724
+            w: 1
+        - t:
+            x: -.000106079096
+            y: 3.38495636
+            z: 1.20234585
+            w: 0
+          q:
+            x: 9.97480143e-08
+            y: .707106709
+            z: -9.97480001e-08
+            w: .707106829
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+    m_DefaultPose:
+      data:
+        m_X:
+        - t:
+            x: 0
+            y: 0
+            z: 0
+            w: 0
+          q:
+            x: 0
+            y: 0
+            z: 0
+            w: 1
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+        - t:
+            x: -.00166766346
+            y: 2.59278488
+            z: .951598644
+            w: 0
+          q:
+            x: -2.40955433e-08
+            y: -2.90583575e-08
+            z: .769779205
+            w: .638310254
+          s:
+            x: 1.07507181
+            y: 1.07507169
+            z: 16.2637062
+            w: 1
+        - t:
+            x: -.000163574208
+            y: 3.26883268
+            z: 1.22070304e-07
+            w: 0
+          q:
+            x: 2.18556941e-08
+            y: 0
+            z: 0
+            w: 1
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+        - t:
+            x: -.00108780176
+            y: 2.59310746
+            z: .9584288
+            w: 0
+          q:
+            x: 7.18010114e-08
+            y: 3.84760028e-08
+            z: .472328007
+            w: .881422877
+          s:
+            x: 1.07507122
+            y: 1.07507133
+            z: 15.9459724
+            w: 1
+        - t:
+            x: -.000106079096
+            y: 3.38495636
+            z: 1.20234585
+            w: 0
+          q:
+            x: 9.97480143e-08
+            y: .707106709
+            z: -9.97480001e-08
+            w: .707106829
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+    m_SkeletonNameIDArray: 000000008dbd1a8a3d76f6e4a34a6ba05fbfcb18
+    m_Human:
+      data:
+        m_RootX:
+          t:
+            x: 0
+            y: 0
+            z: 0
+            w: 0
+          q:
+            x: 0
+            y: 0
+            z: 0
+            w: 1
+          s:
+            x: 1
+            y: 1
+            z: 1
+            w: 1
+        m_Skeleton:
+          data:
+            m_Node: []
+            m_ID: 
+            m_AxesArray: []
+        m_SkeletonPose:
+          data:
+            m_X: []
+        m_LeftHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_RightHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_Handles: []
+        m_ColliderArray: []
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneMass:
+        - .145454556
+        - .121212132
+        - .121212132
+        - .0484848544
+        - .0484848544
+        - .00969697069
+        - .00969697069
+        - .0303030331
+        - .290909111
+        - .0121212136
+        - .0484848544
+        - .0060606068
+        - .0060606068
+        - .0242424272
+        - .0242424272
+        - .0181818195
+        - .0181818195
+        - .0060606068
+        - .0060606068
+        - .00242424267
+        - .00242424267
+        - 0
+        - 0
+        - 0
+        m_ColliderIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_Scale: 1
+        m_ArmTwist: .5
+        m_ForeArmTwist: .5
+        m_UpperLegTwist: .5
+        m_LegTwist: .5
+        m_ArmStretch: .0500000007
+        m_LegStretch: .0500000007
+        m_FeetSpacing: 0
+        m_HasLeftHand: 0
+        m_HasRightHand: 0
+        m_HasTDoF: 0
+    m_HumanSkeletonIndexArray: 
+    m_HumanSkeletonReverseIndexArray: 
+    m_RootMotionBoneIndex: -1
+    m_RootMotionBoneX:
+      t:
+        x: 0
+        y: 0
+        z: 0
+        w: 0
+      q:
+        x: 0
+        y: 0
+        z: 0
+        w: 1
+      s:
+        x: 1
+        y: 1
+        z: 1
+        w: 1
+    m_RootMotionSkeleton:
+      data:
+        m_Node: []
+        m_ID: 
+        m_AxesArray: []
+    m_RootMotionSkeletonPose:
+      data:
+        m_X: []
+    m_RootMotionSkeletonIndexArray: 
+  m_TOS:
+    0: 
+    416005983: glass
+    2317008269: hours
+    2691386019: minutes
+    3841357373: clock 9
