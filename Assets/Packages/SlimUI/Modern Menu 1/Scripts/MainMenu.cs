@@ -39,6 +39,12 @@ namespace SlimUI.ModernMenu
         public GameObject PanelVideo;
         [Tooltip("The UI Panel that holds the GAME window tab")]
         public GameObject PanelGame;
+        [Tooltip("The UI Panel that holds the CONTROLS window tab")]
+        public GameObject PanelControls_1;
+        [Tooltip("The UI Panel that holds the VIDEO window tab")]
+        public GameObject PanelVideo_1;
+        [Tooltip("The UI Panel that holds the GAME window tab")]
+        public GameObject PanelGame_1;
         [Tooltip("The UI Panel that holds the KEY BINDINGS window tab")]
         public GameObject PanelKeyBindings;
         [Tooltip("The UI Sub-Panel under KEY BINDINGS for MOVEMENT")]
@@ -64,6 +70,12 @@ namespace SlimUI.ModernMenu
         public GameObject lineVideo;
         [Tooltip("Highlight Image for when CONTROLS Tab is selected in Settings")]
         public GameObject lineControls;
+        [Tooltip("Highlight Image for when GAME Tab is selected in Settings")]
+        public GameObject lineGame_1;
+        [Tooltip("Highlight Image for when VIDEO Tab is selected in Settings")]
+        public GameObject lineVideo_1;
+        [Tooltip("Highlight Image for when CONTROLS Tab is selected in Settings")]
+        public GameObject lineControls_1;
         [Tooltip("Highlight Image for when KEY BINDINGS Tab is selected in Settings")]
         public GameObject lineKeyBindings;
         [Tooltip("Highlight Image for when MOVEMENT Sub-Tab is selected in KEY BINDINGS")]
@@ -76,7 +88,8 @@ namespace SlimUI.ModernMenu
         [Header("LOADING SCREEN")]
         public GameObject loadingMenu;
         public Slider loadBar;
-        public TMP_Text finishedLoadingText;
+        public GameObject finishedLoadingText;
+        public GameObject LoadingText;
         [Header("Mine")]
         public GameObject logo;
 
@@ -118,7 +131,7 @@ namespace SlimUI.ModernMenu
         {
             DisableMenus();
             menus[menuIndex].SetActive(true);
-            logo.SetActive(false);
+            // logo.SetActive(false);
         }
 
         public void NewGame(int level)
@@ -139,18 +152,31 @@ namespace SlimUI.ModernMenu
         public void Position1()
         {
             CameraObject.SetFloat("Animate", 0);
+            CameraObject.SetFloat("Animate_2", 0);
         }
+
+        public void Position3()
+        {
+            CameraObject.SetFloat("Animate_2", 1);
+        }
+
 
         void DisablePanels()
         {
             PanelControls.SetActive(false);
+            PanelControls_1.SetActive(false);
             PanelVideo.SetActive(false);
+            PanelVideo_1.SetActive(false);
             PanelGame.SetActive(false);
+            PanelGame_1.SetActive(false);
             PanelKeyBindings.SetActive(false);
 
             lineGame.SetActive(false);
+            lineGame_1.SetActive(false);
             lineControls.SetActive(false);
+            lineControls_1.SetActive(false);
             lineVideo.SetActive(false);
+            lineVideo_1.SetActive(false);
             lineKeyBindings.SetActive(false);
 
             PanelMovement.SetActive(false);
@@ -174,21 +200,27 @@ namespace SlimUI.ModernMenu
         {
             DisablePanels();
             PanelGame.SetActive(true);
+            PanelGame_1.SetActive(true);
             lineGame.SetActive(true);
+            lineGame_1.SetActive(true);
         }
 
         public void VideoPanel()
         {
             DisablePanels();
             PanelVideo.SetActive(true);
+            PanelVideo_1.SetActive(true);
             lineVideo.SetActive(true);
+            lineVideo_1.SetActive(true);
         }
 
         public void ControlsPanel()
         {
             DisablePanels();
             PanelControls.SetActive(true);
+            PanelControls_1.SetActive(true);
             lineControls.SetActive(true);
+            lineControls_1.SetActive(true);
         }
 
         public void KeyBindingsPanel()
@@ -253,6 +285,8 @@ namespace SlimUI.ModernMenu
             operation.allowSceneActivation = false;
             mainCanvas.SetActive(false);
             loadingMenu.SetActive(true);
+            // LoadingText.SetActive(true);
+            // finishedLoadingText.SetActive(false);
 
             while (!operation.isDone)
             {
@@ -261,12 +295,13 @@ namespace SlimUI.ModernMenu
 
                 if (operation.progress >= 0.9f)
                 {
-                    finishedLoadingText.gameObject.SetActive(true);
+                    // LoadingText.SetActive(false);
+                    // finishedLoadingText.SetActive(true);
 
-                    // if (Input.anyKeyDown)
-                    // {
+                    if (Input.anyKeyDown)
+                    {
                         operation.allowSceneActivation = true;
-                    // }
+                    }
                 }
 
                 yield return null;
