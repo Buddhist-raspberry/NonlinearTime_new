@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
     public GameObject player;
     public BGM bgm;
     
+    public string next_level="level_01";
     // Start is called before the first frame update
     void Awake()
     {
@@ -79,7 +80,7 @@ public class GameLogic : MonoBehaviour
     public void GameRestart()
     {
         Debug.Log("重新开始");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(next_level);
     }
     public void GameOver()
     {
