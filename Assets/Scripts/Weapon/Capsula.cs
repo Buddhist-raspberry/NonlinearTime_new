@@ -56,6 +56,12 @@ public class Capsula : ChronosBehaviour
                 Debug.Log("无效");
                 break;
             }
-        GameObject.Destroy(gameObject,0.0f);
+        transform.parent = playerController.weaponHolder;
+        transform.DOLocalMove(Vector3.zero, .25f).SetEase(Ease.OutBack).SetUpdate(true);
+        transform.DOLocalRotate(Vector3.zero, .25f).SetUpdate(true);
+        Invoke("destroySelf",0.05f);
+    }
+    void destroySelf(){
+        GameObject.Destroy(gameObject);
     }
 }
