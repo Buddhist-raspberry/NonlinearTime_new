@@ -1,0 +1,16 @@
+Clean Title Transitions - v1.2.1
+
+If you want to use TMP version of it:
+1 - Import TextMeshPro from Package Manager
+2 - Import Integrations > TextMeshPro Integration package
+
+Tutorial & changes:
+https://www.youtube.com/playlist?list=PLkd6Vx4qhiaAVwGwBiYHk-uXbdhsi4ygl
+
+Do you have any questions or requests?
+Contact me via:
+E-mail: isa.steam@outlook.com
+YouTube: https://www.youtube.com/c/michsky
+Unity Connect: https://connect.unity.com/u/5992c13832b3060018eff44d
+Patreon: https://www.patreon.com/michsky
+Steam: https://steamcommunity.com/id/geezjesus/
