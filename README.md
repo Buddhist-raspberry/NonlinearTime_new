@@ -1,5 +1,7 @@
 # 🕰️ Nonlinear Time 非线性时间 
 
+![image-20210621073213602](figures/README/image-20210621073213602.png)
+
 ## 🔍 Introduction 游戏简介
 ### Overview 总览
 「非线性时间」是一款第一人称解谜游戏。
@@ -15,11 +17,18 @@
 
 ### Background 游戏背景
 
+自命不凡的 M Lab 的主任偶然发现了操纵时间的技术，从此自称为 [克洛诺斯](https://en.wikipedia.org/wiki/Chronos) 博士，并以时间之神自居。克洛诺斯博士的技术允许他通过一根通电的光棒控制时间流向，并改变事件因果，进而把物体带入一个非线性的时间世界。
 
+但与此同时，这项技术也给他惹来了许多不必要的「关注」和「麻烦」...
+<img src="figures/README/-S_ccWZzQPIez-SWu8gE0udYeANavyDCG13bIe1lfbrXDoG8Z_dw_cCFvS4IklPCrRMyY4m5Ypli8_dGgdM9fdsK9ileItBWoGEN1gqB0vQR3O4Aeyi1xzjBuDOIMqxWXe1tv7eWiAk" alt="img" style="zoom:67%;" />
 
 ### Core Gameplay 核心设定
 
-
+1. 「非线性时间」是一款第一人称视角解谜游戏
+2. **「时间线」：**每一个游戏中的物体都有一条独立的时间线，且可以被控制
+3. **「感知即现实」：**游戏中所有的事件因果结算都以玩家视角的感知作为最终判定依据
+4. **「无直接伤害」：**玩家无法直接对敌人造成伤害的手段（如枪械，近战武器 etc.），只有利用恰当时间机制才能击败敌人并推进游戏进度
+5. **「资源有限」：**资源是有限的，如果资源利用不当将导致无法解开后续谜题
 
 ### Beginner's Guide Design 新手引导设计
 
