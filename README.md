@@ -1,26 +1,14 @@
-# Nonlinear Time
+# 🕰️ Nonlinear Time 非线性时间 
 
-* [游戏简介](#游戏简介)
-* [游戏背景](#游戏背景)
-* [游戏设定](#游戏设定)
-* [关卡设计](#关卡设计)
-* [开发时间线](#开发时间线)
-* [游戏截屏](#游戏截屏)
-* [项目结构](#项目结构)
-* [运行环境](#运行环境)
-* [开发环境](#开发环境)
+## Introduction 游戏简介
+### Overview 总览
+「非线性时间」是一款第一人称解谜游戏。
 
-## 游戏简介
+时间并不「流淌」，它不是河水，而是河床。符合因果顺序的事件在时间的河床中按一个方向排列，没有什么在流动。在这个令人绞尽脑汁的第一人称解谜游戏中，你将作为疯狂的科学家，利用时间控制的错觉改变事件因果，解决一道道看似不可能的谜题。感知即现实。
 
-开发人员
-
-|  学校  |  学号   |  姓名  |
-| :----: | :-----: | :----: |
-| Tongji | 1851197 | 周楷彬 |
-| Tongji | 1852452 | 张明哲 |
-| Tongji | 1750655 | 李嘉杰 |
-| Tongji | 1851605 | 齐小钰 |
-| Tongji | 1851620 | 贾小玉 |
+*通过我们的 Slides 快速了解「非线性时间」做了什么*
+[Slides English Version 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
+[中文版 Slides 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
 
 
 
@@ -86,7 +74,7 @@
 
 ## 开发时间线
 
-
+![1](figures/README/1.png)
 
 ## 游戏截屏
 
@@ -95,9 +83,6 @@
 
 
 ## 项目结构
-
-
-
 * `Assets`
   * `Animation`：动画相关，Animation和Animator Controller
   * `Ludiq`：Chorons插件
@@ -118,9 +103,18 @@
   - Windows 10
   - macOS Catalina 10.15+
 
----
-
 ## 开发环境
 
 * **开发引擎**：Unity 2020.2.3.f1
 * **开发语言**：C#
+
+
+## 制作团队
+
+|  学校  |  学号   |  姓名  |
+| :----: | :-----: | :----: |
+| Tongji | 1851197 | 周楷彬 |
+| Tongji | 1852452 | 张明哲 |
+| Tongji | 1851605 | 齐小钰 |
+| Tongji | 1851620 | 贾小玉 |
+| Tongji | 1750655 | 李嘉杰 |
