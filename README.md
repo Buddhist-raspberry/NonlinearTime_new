@@ -1,7 +1,7 @@
 # 🕰️ Nonlinear Time 非线性时间 
 
-## 🔍Introduction 游戏简介
-### 🗺️Overview 总览
+## 🔍 Introduction 游戏简介
+### Overview 总览
 「非线性时间」是一款第一人称解谜游戏。
 
 *时间并不「流淌」，它不是河水，而是河床。符合因果顺序的事件在时间的河床中按一个方向排列，没有什么在流动。在这个令人绞尽脑汁的第一人称解谜游戏中，你将作为疯狂的科学家，利用时间控制的错觉改变事件因果，解决一道道看似不可能的谜题。感知即现实。*
@@ -13,15 +13,19 @@
 
 
 
-## 游戏背景
+### Background 游戏背景
 
 
 
-## 游戏设定
+### Core Gameplay 核心设定
 
 
 
-## 关卡设计
+### Beginner's Guide Design 新手引导设计
+
+ 
+
+### Level Design 关卡设计
 
 - 第一关，获得加速能力
 
@@ -73,11 +77,8 @@
 
   - 正式关卡
 
-## 开发时间线
 
-![1](figures/README/1.png)
-
-## 🖥️Screenshots 游戏截屏
+## 🖥️ Screenshots 游戏截屏
 
 ![img](https://lh4.googleusercontent.com/iHId8ihKSxztevYBpMRmX8KBhmBNitQkvdslH_3Eqw7qHDiDmciL6qJl0brBtlv3a_gnMYU-uGPBeW4ENGcas8wss7cmX2acZmFDAoYijgk25gBvnXZfTcEpdIncIgSgU-Nkvjet3aw)
 
@@ -97,7 +98,7 @@
 
 ![image-20210621070745326](figures/README/image-20210621070745326.png)
 
-## 项目结构
+## 🗄️ Project Structure 项目结构
 * `Assets`
   * `Animation`：动画相关，Animation和Animator Controller
   * `Ludiq`：Chorons插件
@@ -112,19 +113,19 @@
   * `Settings`：光照设置文件
   * `Sprites`：2D图片
 
-## 运行环境
+## 🔫 System Requirements 系统需求
 
 * **运行系统**
   - Windows 10
   - macOS Catalina 10.15+
 
-## 开发环境
+## 🛠️ Dev Environment 开发环境
 
 * **开发引擎**：Unity 2020.2.3.f1
 * **开发语言**：C#
 
 
-## 制作团队
+## 👨‍👩‍👧‍👦 Dev Team 制作团队
 
 |  学校  |  学号   |  姓名  |
 | :----: | :-----: | :----: |
@@ -133,3 +134,7 @@
 | Tongji | 1851605 | 齐小钰 |
 | Tongji | 1851620 | 贾小玉 |
 | Tongji | 1750655 | 李嘉杰 |
+
+## 📊 Gantt Chart 甘特图
+
+![1](figures/README/1.png)
