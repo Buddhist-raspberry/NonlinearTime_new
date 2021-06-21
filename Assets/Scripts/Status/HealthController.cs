@@ -34,7 +34,10 @@ public class HealthController : MonoBehaviour
     void Update()
     {
         hpBar.transform.LookAt(Camera.main.transform);
+        Image[] image_list = GetComponentsInChildren<Image>();
+        if(image_list.Length<=0)return;
         Image hpFillColor = GetComponentsInChildren<Image>()[1];
+
         if (currentHealth > 0.8f * maxHealth)
         {
             hpFillColor.color = HighColor;
