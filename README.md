@@ -3,7 +3,7 @@ This repository is a course project of game design course inn the School of Soft
 
 
 
-本仓库是同济大学软件学院（18级数字媒体方向）游戏脚本设计的课程项目。本项目由维塔士的各位老师指导完成，项目成员是周楷彬、张明哲、齐小钰、贾小玉和李嘉杰。
+本仓库是同济大学软件学院（18级数字媒体方向）游戏程序设计的课程项目。本项目由维塔士的各位老师指导完成，项目成员是周楷彬、张明哲、齐小钰、贾小玉和李嘉杰。
 
 
 ## 🔍 Introduction 游戏简介
@@ -67,23 +67,25 @@ This repository is a course project of game design course inn the School of Soft
 
 ## 🗺️ Beginner's Guide Design 新手引导设计
 
-- 玩家需要学会的概念/操作方式
-    - 基本的时间机制
-      - 通过移动来控制时间流 *（于第一关前半段进行引导）*
-      - 时间状态的指示物 *（于第一关前半段进行引导）*
-      - 时间能量条的概念 *（于第一关前半段进行引导）*
-    - 时间控制方法
-      - 鼠标滚轮(魔杖) *（于第一关后半段进行引导）*
-      - 时间加速 *（于第一关后半段进行引导）*
-      - 时间减速 *（于第一关后半段进行引导）*
-      - 时间逆流 *（于第二关前半段进行引导）*
-    - 魔法环(魔域/光圈) *（于第二关后半段进行引导）*
-    - 药水 *（于第二关后半段进行引导）*
-	- 可投掷物 *（于第二关后半段进行引导）*
-	
-	<u>*由于相关细节涉及剧透，如有需求可通过下面的 Slides 快速了解「新手引导设计」的更多细节*🙂</u>
-	
-	[新手引导设计 👈](https://docs.google.com/presentation/d/1c_ZFpy_rLgcetVKLr1CIIF9gY3AxcEtpD90yTdYPaYw/edit?usp=sharing)
+玩家需要学会的概念/操作方式如下：
+- 基本的时间机制
+  - 通过移动来控制时间流 *（于第一关前半段进行引导）*
+  - 时间状态的指示物 *（于第一关前半段进行引导）*
+  - 时间能量条的概念 *（于第一关前半段进行引导）*
+- 时间控制方法
+  - 鼠标滚轮(魔杖) *（于第一关后半段进行引导）*
+    - 时间加速 *（于第一关后半段进行引导）*
+    - 时间减速 *（于第一关后半段进行引导）*
+    - 时间逆流 *（于第二关前半段进行引导）*
+  - 魔法环(魔域/光圈) *（于第二关后半段进行引导）*
+- 药水 *（于第二关后半段进行引导）*
+- 可投掷物 *（于第二关后半段进行引导）*
+
+<u>*由于相关细节涉及剧透，如有需求可通过下面的 Slides 快速了解「新手引导设计」的更多细节*🙂</u>
+
+[Design of Beginner's Guide（English Version） 👈](https://docs.google.com/presentation/d/1c_ZFpy_rLgcetVKLr1CIIF9gY3AxcEtpD90yTdYPaYw/edit?usp=sharing)
+
+[新手引导设计（中文版） 👈](https://docs.google.com/presentation/d/1FtnStFGiLjDrohFvtaoTZDPvNympZp0VhJdPYgDqtmg/edit?usp=sharing)
 
 
 ## 🕹️ Level Design 关卡设计
@@ -155,7 +157,7 @@ This repository is a course project of game design course inn the School of Soft
 
 - Storyline 剧情
 
-  ​	洛诺斯博士从魔法环实验室逃离出来，来到实验室外的街道上，发这里的敌人比实验中更多，也更危险。看起来，一场正面冲突是在所难免的了..
+  ​	克洛诺斯博士从魔法环实验室逃离出来，来到实验室外的街道上，发这里的敌人比实验中更多，也更危险。看起来，一场正面冲突是在所难免的了..
 
 - Process 关卡流程
 
