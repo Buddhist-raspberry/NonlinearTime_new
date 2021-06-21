@@ -15,7 +15,7 @@ This repository is a course project of game design course inn the School of Soft
 
 *时间并不「流淌」，它不是河水，而是河床。符合因果顺序的事件在时间的河床中按一个方向排列，没有什么在流动。在这个令人绞尽脑汁的第一人称解谜游戏中，你将作为疯狂的科学家，利用时间控制的错觉改变事件因果，解决一道道看似不可能的谜题。感知即现实。*
 
-*通过我们的 Slides 快速了解「非线性时间」做了什么*
+<u>*通过我们的 Slides 快速了解「非线性时间」做了什么*</u>
 
 [Slides English Version 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
 [中文版 Slides 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
@@ -67,7 +67,24 @@ This repository is a course project of game design course inn the School of Soft
 
 ## 🗺️ Beginner's Guide Design 新手引导设计
 
- 
+- 玩家需要学会的概念/操作方式
+    - 基本的时间机制
+      - 通过移动来控制时间流 *（于第一关前半段进行引导）*
+      - 时间状态的指示物*（于第一关前半段进行引导）*
+      - 时间能量条的概念 *（于第一关前半段进行引导）*
+    - 时间控制方法
+      - 鼠标滚轮(魔杖) *（于第一关后半段进行引导）*
+      - 时间加速 *（于第一关后半段进行引导）*
+      - 时间减速 *（于第一关后半段进行引导）*
+      - 时间逆流 *（于第二关前半段进行引导）*
+    - 魔法环(魔域/光圈) *（于第二关后半段进行引导）*
+    - 药水 *（于第二关后半段进行引导）*
+	- 可投掷物*（于第二关后半段进行引导）*
+	
+	<u>*由于相关细节涉及剧透，如有需求可通过下面的 Slides 快速了解「新手引导设计」的更多细节*🙂</u>
+	
+	[新手引导设计 👈](https://docs.google.com/presentation/d/1c_ZFpy_rLgcetVKLr1CIIF9gY3AxcEtpD90yTdYPaYw/edit?usp=sharing)
+
 
 ## 🕹️ Level Design 关卡设计
 
