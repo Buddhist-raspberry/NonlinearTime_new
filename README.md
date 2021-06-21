@@ -18,7 +18,7 @@ This repository is a course project of game design course inn the School of Soft
 <u>*通过我们的 Slides 快速了解「非线性时间」做了什么*</u>
 
 [Slides English Version 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
-[中文版 Slides 👈](https://docs.google.com/presentation/d/1aidkKXJ6el329gLtfbOAd3ImpXXvzJOWCaSdS-iOhTg/edit?usp=sharing)
+[中文版 Slides 👈](https://docs.google.com/presentation/d/1kS_Orh4E0aKxiaEcoh7jYO8OwPtjHZ7w8v_pPMfJFIs/edit?usp=sharing)
 
 
 
